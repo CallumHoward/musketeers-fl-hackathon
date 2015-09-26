@@ -1,21 +1,21 @@
 <template name="homepage">
 
   <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--4">
+    <div class="mdl-cell mdl-cell--4-col">
       <!-- Accent-colored raised button with ripple -->
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
         Email
       </button>
     </div>
 
-    <div class="mdl-cell mdl-cell--4">
+    <div class="mdl-cell mdl-cell--4-col">
       <!-- Accent-colored raised button with ripple -->
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-        webpage
+        Webpage
       </button>
     </div>
 
-    <div class="mdl-cell mdl-cell--4">
+    <div class="mdl-cell mdl-cell--4-col">
       <!-- Accent-colored raised button with ripple -->
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
         Print Media
@@ -24,12 +24,11 @@
   </div>
 
   <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--1"></div>
-
-    <div class="mdl-cell mdl-cell--10">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--10-col">
       <!-- Floating Multiline Textfield -->
       <form class="description-field">
-        <div class="mdl-textfield mdl-js-textfield">
+        <div id="description-field-textbox" class="mdl-textfield mdl-js-textfield">
           <textarea class="mdl-textfield__input" type="text" rows= "3" name="description"></textarea>
           <label class="mdl-textfield__label" for="sample5">Text lines...</label>
         </div>
@@ -41,7 +40,7 @@
       </form>
     </div>
 
-    <div class="mdl-cell mdl-cell--1"></div>
+    <div class="mdl-cell mdl-cell--1-col"></div>
   </div>
 
 </template>
