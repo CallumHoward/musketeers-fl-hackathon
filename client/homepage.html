@@ -1,56 +1,49 @@
 <template name="homepage">
 
-  <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--4-col">
-      <!-- Accent-colored raised button with ripple -->
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-        Email
-      </button>
-    </div>
+  <!-- Simple header with fixed tabs. -->
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+    <header class="mdl-layout__header">
+      <div id="header-row" class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">Musketeers</span>
+      </div>
+      <!-- Tabs -->
+      <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+        <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Email Content</a>
+        <a href="#fixed-tab-2" class="mdl-layout__tab">Webpage Content</a>
+        <a href="#fixed-tab-3" class="mdl-layout__tab">Print Media</a>
+      </div>
+    </header>
+    <main class="mdl-layout__content">
+    <form class="description-field">
+      <div class="mdl-grid">
 
-    <div class="mdl-cell mdl-cell--4-col">
-      <!-- Accent-colored raised button with ripple -->
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-        Webpage
-      </button>
-    </div>
-
-    <div class="mdl-cell mdl-cell--4-col">
-      <!-- Accent-colored raised button with ripple -->
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-        Print Media
-      </button>
-    </div>
-  </div>
-
-  <form class="description-field">
-    <div class="mdl-grid">
-
-      <div class="mdl-cell mdl-cell--12-col">
-        <div id="description-field-padding" class="input-padding mdl-shadow--2dp">
-          <div id="description-field-textbox" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <textarea class="mdl-textfield__input" type="text" rows= "1" name="description"></textarea>
-            <label class="mdl-textfield__label" for="sample5">Description...</label>
+        <div class="mdl-cell mdl-cell--12-col">
+          <div id="description-field-padding" class="input-padding mdl-shadow--2dp">
+            <div id="description-field-textbox" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <textarea class="mdl-textfield__input" type="text" rows= "1" name="description"></textarea>
+              <label class="mdl-textfield__label" for="sample5">Description</label>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="mdl-cell mdl-cell--12-col">
-        <div id="email-field-padding" class="input-padding mdl-shadow--2dp">
-          <div id="email-field" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="email-field-input" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" />
-            <label class="mdl-textfield__label" for="email-field-placeholder">Email...</label>
+        <div class="mdl-cell mdl-cell--12-col">
+          <div id="email-field-padding" class="input-padding mdl-shadow--2dp">
+            <div id="email-field" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" id="email-field-input" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" />
+              <label class="mdl-textfield__label" for="email-field-placeholder">Email</label>
+            </div>
           </div>
         </div>
-      </div>
 
         <div class="mdl-cell mdl-cell--12-col">
           <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
             submit
           </button>
         </div>
-
       </div>
-  </form>
+    </form>
+    </main>
+  </div>
 
 </template>
