@@ -1,3 +1,38 @@
 #description-field-textbox {
     width: 100%;
 }
+
+#description-field-textbox textarea {
+    overflow-y: hidden; /* fixes scrollbar flash - kudos to @brettjonesdev */
+    //padding-top: 1.1em; /* fixes text jump on Enter keypress */
+}
+
+
+#email-field {
+    width: 100%;
+}
+
+#email-field input {
+    height: 26px;
+}
+
+.mdl-cell {
+    text-align: center;
+}
+
+.mdl-grid {
+    max-width: 660px;
+}
+
+#description-field-padding, #email-field-padding {
+    padding: 15px 20px 0px;
+    background-color: white;
+}
+
+.mdl-button {
+    min-width: 150px;
+}
+
+body {
+    background-color: rgba(0,0,0,0.02);
+}

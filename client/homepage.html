@@ -23,24 +23,34 @@
     </div>
   </div>
 
-  <div class="mdl-grid">
-    <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell mdl-cell--10-col">
-      <!-- Floating Multiline Textfield -->
-      <form class="description-field">
-        <div id="description-field-textbox" class="mdl-textfield mdl-js-textfield">
-          <textarea class="mdl-textfield__input" type="text" rows= "3" name="description"></textarea>
-          <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+  <form class="description-field">
+    <div class="mdl-grid">
+
+      <div class="mdl-cell mdl-cell--12-col">
+        <div id="description-field-padding" class="input-padding mdl-shadow--2dp">
+          <div id="description-field-textbox" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <textarea class="mdl-textfield__input" type="text" rows= "1" name="description"></textarea>
+            <label class="mdl-textfield__label" for="sample5">Description...</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="mdl-cell mdl-cell--12-col">
+        <div id="email-field-padding" class="input-padding mdl-shadow--2dp">
+          <div id="email-field" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="email-field-input" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" />
+            <label class="mdl-textfield__label" for="email-field-placeholder">Email...</label>
+          </div>
+        </div>
+      </div>
+
+        <div class="mdl-cell mdl-cell--12-col">
+          <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            submit
+          </button>
         </div>
 
-        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-          submit
-        </button>
-
-      </form>
-    </div>
-
-    <div class="mdl-cell mdl-cell--1-col"></div>
-  </div>
+      </div>
+  </form>
 
 </template>

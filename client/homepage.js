@@ -9,3 +9,12 @@ Template.homepage.events({
         ProjectRequests.insert(data);
     }
 });
+
+Template.homepage.onRendered(function (){
+    // auto adjust the height of
+    $('#description-field-textbox').on( 'keyup', 'textarea', function (){
+        $(this).height( 0 );
+        $(this).height( this.scrollHeight );
+    });
+    $('#description-field-textbox').find( 'textarea' ).keyup();
+});
