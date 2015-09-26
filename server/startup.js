@@ -1,5 +1,5 @@
 Meteor.startup(function() {
-  FL = Freelancer(
+  Freelancer = Freelancer(
     Meteor.settings.freelancer.developerId,
     Meteor.settings.freelancer.developerKey
   );

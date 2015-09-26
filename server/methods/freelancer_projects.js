@@ -8,10 +8,9 @@ Meteor.methods({
       jobs: [{id: Number}]
     });
 
-    FL.Projects.create(data, Meteor.bindEnvironment(function(err, res) {
+    Freelancer.Projects.create(data, Meteor.bindEnvironment(function(err, res) {
       if (err) throw new Meteor.Error(400, err);
 
-      
       console.log(res);
     }));
   },
