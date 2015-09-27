@@ -25,5 +25,5 @@ Package.onTest(function(api) {
 });
 
 Npm.depends({
-  "freelancer-node": "https://musketeersdummy:giveusmonies8@github.com/kAlbert19/freelancer-node/archive/1712351c6b7462b61296c55c84cca03b671e154a.tar.gz"
+  "freelancer-node": "https://musketeersdummy:giveusmonies8@github.com/kAlbert19/freelancer-node/archive/7f14eef055035b845c31a7867001a49ddd53348c.tar.gz"
 });
