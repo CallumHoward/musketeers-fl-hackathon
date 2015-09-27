@@ -18,6 +18,7 @@ Meteor.methods({
       // Put to DB
       ProjectRequests.insert({
         _id: projectId,
+        email: email,
         title: data.title,
         description: data.description,
         submission: null,

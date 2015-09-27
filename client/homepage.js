@@ -3,10 +3,15 @@ Template.homepage.events({
     e.preventDefault();
 
     var data = {
+      title: $(e.target).find('[name=email]').val(),
       description: $(e.target).find('[name=description]').val()
     };
+    var email = data.title;
 
-    ProjectRequests.insert(data);
+    Meteor.call('createNewProject', email, data, function(err, res) {
+      if (err) alert(err);
+      Router.go('submitted');
+    });
   }
 });
 
@@ -18,4 +23,3 @@ Template.homepage.onRendered(function (){
   });
   $('#description-field-textbox').find( 'textarea' ).keyup();
 });
-
