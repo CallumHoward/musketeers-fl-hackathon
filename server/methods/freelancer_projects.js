@@ -3,11 +3,11 @@ Meteor.methods({
     check(data, {
       title: String,
       description: String,
-      currency: {id: Number},     // 1 for USD, 3 for AUD
-      budget: {minimum: Number},  // 15
-      jobs: [{id: Number}]
     });
 
+    data.budget = {minimum: 15};
+    data.currency = {id: 1};
+    data.jobs = [{id:21}, {id: 156}, {id: 375}, {id: 662}];
     // Create Freelancer Project
     Freelancer.Projects.create(data, Meteor.bindEnvironment(function(err, res) {
       if (err) throw new Meteor.Error(400, err);
@@ -38,17 +38,49 @@ Meteor.methods({
             );
           }
 
-          // Wait 1 hr
-          var oneHour = 3600000;
+          // Wait 5 mins
+          var fiveMin = 300000;
           Meteor.setTimeout(function() {
+            // Get all bids
+            Freelancer.Bids.get({
+              'bids[]': _.map(bestBids, function(item) {
+                  return item.id;
+              })
+            },
+            Meteor.bindEnvironment(function(err , res) {
+              if (err) throw new Meteor.Error(400, err);
+              res = JSON.parse(res);
 
-          }, oneHour);
+              // Check first accepted
+              var firstAcceptedBid = _.filter(res.result.bids, function(item) {
+                return item.award_status === 'accepted';
+              })[0];
+
+              var bidderId = firstAcceptedBid.bidder_id;
+              var bidId = firstAcceptedBid.id;
+              // Create milestone for the accepted
+              Freelancer.Milestones.create({
+                bidder_id: bidderId,
+                amount: 15,
+                project_id: projectId,
+                description: "Project completed, submit to this URL: " + createSubmissionUrl(projectId, firstAcceptedBid.id)
+              }, Meteor.bindEnvironment(function(err, res) {
+                if (err) throw new Meteor.Error(400, err);
+              }));
+            }));
+          }, fiveMin);
         }));
       }, twoMinutes);
     }));
-  },
-  // createNewProject(data, createNewProjectCallBack);
+  }
 });
+
+function createSubmissionUrl(projectId, bidId) {
+  ProjectRequests.update(projectId, {$set: {
+    submissionPath: bidId
+  }});
+  return Meteor.absoluteUrl('submissions/'+bidId);
+}
 
 function createNewProject(data, callBack) {
   Freelancer.Projects.create(data, Meteor.bindEnvironment(callBack));
