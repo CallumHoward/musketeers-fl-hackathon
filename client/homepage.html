@@ -2,10 +2,10 @@
 
   <!-- Simple header with fixed tabs. -->
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
-    <header class="mdl-layout__header">
+    <header id="header-container" class="mdl-layout__header">
       <div id="header-row" class="mdl-layout__header-row">
         <!-- Title -->
-        <span class="mdl-layout-title">Musketeers</span>
+        <span class="mdl-layout-title">Musketeer</span>
       </div>
       <!-- Tabs -->
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
@@ -32,7 +32,7 @@
     </section>
     <section class="mdl-layout__tab-panel" id="fixed-tab-2">
       <div class="mdl-grid page-content">
-        <h4>What would you like written webpage?</h4>
+        <h4>What would you like written for your webpage?</h4>
         <p>
         Tell us about your content. <br />
         Is it the about page, The landing page, The FAQ? <br />
@@ -70,16 +70,22 @@
           <div id="email-field-padding" class="input-padding mdl-shadow--2dp">
             <div id="email-field" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
               <input class="mdl-textfield__input" type="text" id="email-field-input" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" />
-              <label class="mdl-textfield__label" for="email-field-placeholder">Email</label>
+              <label class="mdl-textfield__label" for="email-field-placeholder">Your Email</label>
             </div>
           </div>
         </div>
 
         <div class="mdl-cell mdl-cell--12-col page-content">
           <p>Total: $20</p>
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Pay Now
-          </button>
+          <a href="/submitted">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+              Pay Now
+            </button>
+          </a>
+        </div>
+
+        <div id="sponsor-message" class="mdl-cell mdl-cell--12-col page-content">
+          <p>Powered by <a href="www.freelancer.com">Freelancer.com</a></p>
         </div>
       </div>
     </form>
