@@ -75,20 +75,33 @@
           </div>
         </div>
 
-        <div class="mdl-cell mdl-cell--12-col page-content">
-          <p>Total: $20</p>
-          <a href="/submitted">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-              Pay Now
-            </button>
-          </a>
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col">
+            <p class="page-content">Total: $20</p>
+          </div>
         </div>
 
-        <div id="sponsor-message" class="mdl-cell mdl-cell--12-col page-content">
-          <p>Powered by <a href="www.freelancer.com">Freelancer.com</a></p>
-        </div>
       </div>
     </form>
+
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+            ">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"> Pay Now </button>
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
+          </form>
+        </div>
+      </div>
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        <p class="page-content">Powered by <a href="www.freelancer.com">Freelancer.com</a></p>
+      </div>
+    </div>
+
     </main>
 
   </div>
