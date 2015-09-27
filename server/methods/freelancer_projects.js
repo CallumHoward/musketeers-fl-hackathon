@@ -15,6 +15,16 @@ Meteor.methods({
       console.log(res);
       var projectId = res.result.id;
 
+      // Put to DB
+      ProjectRequests.insert({
+        _id: projectId,
+        title: data.title,
+        description: data.description,
+        submission: null,
+        submissionPath: null,
+        submitted: false
+      });
+
       // Wait 2 minutes
       var twoMinutes = 120000;
       Meteor.setTimeout(function() {
