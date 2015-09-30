@@ -1,5 +1,5 @@
 Template.homepage.events({
-  'submit form.description-field': function(e) {
+  'submit .description-field': function(e) {
     e.preventDefault();
 
     var data = {
