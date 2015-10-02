@@ -25,5 +25,5 @@ Package.onTest(function(api) {
 });
 
 Npm.depends({
-  "text-temple": 'https://ttdeployer:triplethriver@bitbucket.org/thrivetide/text-temple/get/f2776b8745f640519cb8aa292fc312a7ab127315.tar.gz',
+  "text-temple": 'https://github.com/kAlbert19/node-text-temple/archive/382bcc9daa1516c0a648dd6c0dd2f04f5388f30c.tar.gz',
 });
