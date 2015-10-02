@@ -9,6 +9,16 @@ Meteor.methods({
     data.currency = {id: 1};
     data.jobs = [{id:21}, {id: 156}, {id: 375}, {id: 662}];
     data.title = 'Short copy needs to be written very quickly!';
+
+    var docId = ProjectRequests.insert({
+      email: email,
+      title: data.title,
+      description: data.description,
+      submission: null,
+      submissionPath: null,
+      submitted: false
+    });
+
     // Create Freelancer Project
     console.log('Creating Freelancer project...');
     Freelancer.Projects.create(data, Meteor.bindEnvironment(function(err, res) {
@@ -18,15 +28,7 @@ Meteor.methods({
       var projectId = res.result.id;
 
       // Put to DB
-      ProjectRequests.insert({
-        _id: ''+projectId,
-        email: email,
-        title: data.title,
-        description: data.description,
-        submission: null,
-        submissionPath: null,
-        submitted: false
-      });
+      ProjectRequests.update(docId, {$set: {projectId: projectId}});
 
       // Wait 2 minutes
       var twoMinutes = 120000;
@@ -93,8 +95,8 @@ Meteor.methods({
 });
 
 function createSubmissionUrl(projectId, bidId) {
-  ProjectRequests.update(projectId, {$set: {
-    submissionPath: bidId
+  ProjectRequests.update({projectId: projectId}, {$set: {
+    submissionPath: projectId + '/' + bidId
   }});
   return Meteor.absoluteUrl('submissions/' + projectId + '/' + bidId);
 }
