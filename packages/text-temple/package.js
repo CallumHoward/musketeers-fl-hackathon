@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'thrivetide:text-temple',
+  name: 'tendo:text-temple',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',

@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "text-temple": {
-      "version": "https://ttdeployer:triplethriver@bitbucket.org/thrivetide/text-temple/get/f2776b8745f640519cb8aa292fc312a7ab127315.tar.gz",
+      "version": "https://github.com/kAlbert19/node-text-temple/archive/382bcc9daa1516c0a648dd6c0dd2f04f5388f30c.tar.gz",
       "dependencies": {
         "fs": {
           "version": "0.0.2"
